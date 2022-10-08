@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <div className='p-4 space-y-4'>
       <div className='space-x-2'>
-        <input className='border rounded px-4 py-2' type="text" value={name} onChange={e => setName(e.target.value)}/>
+        <input placeholder='Nome' className='border rounded px-4 py-2' type="text" value={name} onChange={e => setName(e.target.value)}/>
         <button
           className='px-4 py-2 bg-blue-600 text-white font-bold rounded'
           onClick={handleAdicionar}>Adicionar</button>
