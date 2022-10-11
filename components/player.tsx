@@ -1,5 +1,5 @@
 import { IPlayer } from '../hooks/use-game'
-import { TrashButton } from './TrashButton'
+import { TrashButton } from './trash-button'
 type PlayerProps = Omit<IPlayer, 'id'> & { onDelete: Function, addMoney: Function }
 
 const formatter = new Intl.NumberFormat()
