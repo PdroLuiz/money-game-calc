@@ -18,15 +18,22 @@ const Home: NextPage = () => {
 
   return (
     <div className='p-4 space-y-4'>
-      <form className='space-x-2' onSubmit={handleSubmit}>
-        <input placeholder='Nome' className='border rounded px-4 py-2' type="text" value={name} onChange={e => setName(e.target.value)}/>
-        <input placeholder='Dinheiro' className='border rounded px-4 py-2' type="number" value={money} onChange={e => setMoney(Number(e.target.value))}/>
+      <form className='flex justify-between space-x-2' onSubmit={handleSubmit}>
+        <input placeholder='Nome' className='border rounded px-4 py-2 w-full' type="text" value={name} onChange={e => setName(e.target.value)}/>
+        <input placeholder='Dinheiro' className='border rounded px-4 py-2 w-full' type="number" value={money} onChange={e => setMoney(Number(e.target.value))}/>
         <button
             className='px-4 py-2 bg-blue-600 text-white font-bold rounded'>Adicionar</button>
       </form>
-      <div className='grid grid-cols-4 gap-4'>
+      <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full'>
         {
-          players.map(p => <Player addMoney={() => addMoney(p.id, 1000)} onDelete={() => deletePlayer(p.id)} key={p.id} name={p.name} money={p.money}/>)
+          players.map(
+            player => <Player
+              key={player.id}
+              addMoney={() => addMoney(player.id, 1000)}
+              onDelete={() => deletePlayer(player.id)}
+              name={player.name}
+              money={player.money}/>
+          )
         }
       </div>
     </div>
