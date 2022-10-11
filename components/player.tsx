@@ -2,7 +2,7 @@ import { IPlayer } from '../hooks/use-game'
 import { TrashButton } from './TrashButton'
 type PlayerProps = Omit<IPlayer, 'id'> & { onDelete: Function, addMoney: Function }
 
-const formatter = new Intl.NumberFormat('pt-BR')
+const formatter = new Intl.NumberFormat()
 
 export const Player = (props: PlayerProps) => {
   const handleClick = () => {
