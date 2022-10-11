@@ -17,7 +17,6 @@ export const Player = (props: PlayerProps) => {
           <p className=''>{formatter.format(props.money)}</p>
         </div>
         <TrashButton onClick={handleClick}/>
-
       </div>
       <div className='flex justify-between pt-8 space-x-2'>
         <button className='px-4 py-2 rounded bg-blue-500 text-white font-bold w-full'>Cobrar</button>
