@@ -60,12 +60,31 @@ export function useGame() {
       })
     )
   }
+  const charge = ({ chargedId, receiverId, amount }: { chargedId: string, receiverId: string, amount: number }) => {
+    setPlayers(
+      players.map(player => {
+        switch (player.id) {
+          case chargedId: {
+            player.money -= amount
+            return player
+          }
+          case receiverId: {
+            player.money += amount
+            return player
+          }
+          default:
+            return player
+        }
+      })
+    )
+  }
 
   return {
     players,
     addPlayer,
     deletePlayer,
     addMoney,
-    transfer
+    transfer,
+    charge
   }
 }
