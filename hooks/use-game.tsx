@@ -29,7 +29,7 @@ export function useGame() {
     }
   }, [players])
 
-  const addPlayer = (name: string) => setPlayers([...players, { id: uuid(), name, money: 0 }])
+  const addPlayer = ({ name, money }: { name: string, money: number }) => setPlayers([...players, { id: uuid(), name, money }])
   const deletePlayer = (id: string) => setPlayers(players.filter(p => p.id !== id))
   const addMoney = (id: string, value: number) => {
     setPlayers(
