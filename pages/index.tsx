@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <button
             className='px-4 py-2 bg-blue-600 text-white font-bold rounded'>Adicionar</button>
       </form>
-      <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full'>
         {
           players.map(
             player => <Player
