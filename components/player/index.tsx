@@ -9,6 +9,7 @@ type PlayerProps = IPlayer & {
   completeTransferFunction: Function
   transferingId?: string
   amount?: number
+  cancelTransfer: Function
 }
 
 const formatter = new Intl.NumberFormat('pt-BR', { currency: 'BRL', style: 'currency' })
@@ -61,6 +62,7 @@ const PlayerTransfering = (props: PlayerProps) => {
       </div>
       <div className='flex justify-between pt-8 space-x-2'>
         <button className='px-4 py-2 rounded bg-red-500 text-white font-bold w-full'
+          onClick={e => props.cancelTransfer()}
           >Cancelar</button>
       </div>
     </section>

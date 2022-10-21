@@ -6,6 +6,12 @@ export function useTransfering(game: ReturnType<typeof useGame>) {
   const [senderId, setSenderId] = useState<string>()
   const [amount, setAmount] = useState<number>()
 
+  const zerarValores = () => {
+    setReceiverId(undefined)
+    setSenderId(undefined)
+    setAmount(undefined)
+  }
+
   useEffect(() => {
     if (
       receiverId &&
@@ -17,9 +23,7 @@ export function useTransfering(game: ReturnType<typeof useGame>) {
         senderId,
         amount
       })
-      setReceiverId(undefined)
-      setSenderId(undefined)
-      setAmount(undefined)
+      zerarValores()
     }
   }, [receiverId, senderId, amount])
 
@@ -29,6 +33,7 @@ export function useTransfering(game: ReturnType<typeof useGame>) {
     receiverId,
     setReceiverId,
     amount,
-    setAmount
+    setAmount,
+    zerarValores
   }
 }

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
   const game = useGame()
   const { players, addPlayer, deletePlayer, addMoney } = game
-  const { senderId, setSenderId, setAmount, amount, setReceiverId } = useTransfering(game)
+  const { senderId, setSenderId, setAmount, amount, setReceiverId, zerarValores } = useTransfering(game)
 
   const handleAdd = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -78,7 +78,8 @@ const Home: NextPage = () => {
               amount={amount}
               completeTransferFunction={() => setReceiverId(player.id)}
               name={player.name}
-              money={player.money}/>
+              money={player.money}
+              cancelTransfer={() => zerarValores()}/>
           )
         }
       </div>
